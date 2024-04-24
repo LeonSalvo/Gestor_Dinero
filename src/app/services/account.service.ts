@@ -11,6 +11,7 @@ export class AccountService {
   balance: number = 0;
   months: any;
   constructor() { 
+
     this.months = {
       1: 31,
       2: 28,
@@ -57,6 +58,7 @@ export class AccountService {
     let year = new Date().getFullYear();
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
   }
+  
 
   setDailyMoney() {
     let month = this.months[new Date().getMonth() + 1];
