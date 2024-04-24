@@ -6,11 +6,13 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
+import { AccountService } from './app/services/account.service';
 
 if (environment.production) {
   enableProdMode();
 }
-
+const accountService = new AccountService();
+accountService.setDailyMoney();
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
